@@ -80,11 +80,11 @@ This mutant is killed by our suite becuase if the lower value of the range is ne
 Here are the statistics from before:
 
 
-Range Class
+### Range Class
+![](Media/DataUtilities_Branch.png)
 
-
-DataUtilities Class
-
+### DataUtilities Class
+![](Media/DataUtilities_Branch.png)
 
 
 
@@ -94,14 +94,14 @@ DataUtilities Class
 Statistics for After we added more tests:
 
 
-Range Class 
-
+### Range Class 
+![](Media/DataUtilities_Branch.png)
 
 In lab 3 we misunderstood the instructions and thought we had to write tests for all of the remaining methods in the range class, therefore it was very difficult to raise the mutant test coverage by 10% as we already had a good number because of our extensive test suite from the last assignment. The mutants became very hard and sometimes impossible to kill, for example there are increment mutants we cannot kill because they increment after the return so they will be correct and we cannot kill them. If we take all of the extra tests we wrote last week and remove them we get a much greater increase.
 
 
-DataUtilities Class
-
+### DataUtilities Class
+![](Media/DataUtilities_Branch.png)
 
 Similarly to the range class there were additional methods added last week that we thought we had to write tests for so our original mutation coverage of 89% is very high, it was extremely difficult to raise the coverage even a few %, but because it's already so high we thought it was acceptable. Most of the remaining mutants cannot be killed.
 
@@ -130,22 +130,15 @@ defects within the code and ensure a system has high coverage and overall qualit
 SELENIUM test cases were designed to carry out a simple sequence of events that may produce errors in the website. We had to cover at least 8 different functionalities of the system, so we wanted to ensure the basic functionalities of an online shopping application were covered. We first drew basic requirements of the system. We decided these as follows: checking out, searching for items, viewing account information, logging in, logging out, viewing items, adding items to cart and viewing cart. Once these were decided, it was simple to produce individual tests that met one requirement each. 
 
 
-
-
 # 9 Explain the use of assertions and checkpoints
 
-
 Asserts ensure that the application is producing the exact behavior that is expected of the system. Requirements that are imperative to the system’s integrity will likely be coded using a hard assert which will abort the testing process if a certain requirement is not met. Alternatively, less important requirements in the system will simply give an error message but will allow the test case to complete. Assertions are used during testing to ensure the system is functioning correctly. Checkpoints are used to define the scope of assertions. They allow a system to be restored to a certain point in time in case of failure or to compare to a future state of the system. Checkpoints are useful in verifying that a system’s state has not been changed after the execution of a testing process. 
-
-
 
 
 # 10 How did you test each functionality with different test data?
 
 
 For each test case, we could test functionality by inputting different inputs into the ‘value’ field on Selenium. For example, we could input an incorrect username and password and the login test would fail. 
-
-
 
 
 # 11 Discuss advantages of Selenium vs. Sikulix
