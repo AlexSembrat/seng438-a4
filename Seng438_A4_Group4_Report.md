@@ -26,53 +26,53 @@ The purpose of this lab is to explore mutation testing and GUI testing. By intro
 # 2 Analysis of 10 Mutants of the Range class
 
 
-1. public boolean intersects(Range range)
-replaced boolean return with true for intersects → SURVIVED
+1. public boolean intersects(Range range)<br />
+replaced boolean return with true for intersects → SURVIVED<br />
 This mutation happens because we only tested a TRUE outcome, to fix this we implemented a test that also tests a FALSE outcome for the test.
 
 
-2. public boolean contains(double value)
-changed conditional boundary → SURVIVED
+2. public boolean contains(double value)<br />
+changed conditional boundary → SURVIVED<br />
 This mutation survived because we did not closely test the boundaries so small changes would allow the mutant to survive.
 
 
-3. public boolean intersects(double b0, double b1)
-removed conditional - replaced comparison check with false → SURVIVED
+3. public boolean intersects(double b0, double b1)<br />
+removed conditional - replaced comparison check with false → SURVIVED<br />
 This mutation was survived because we did not have the test return false all possible ways, adding tests were the lower bound is the problem, and a test where the upperbound is the problem fixes this.
 
 
-4. public boolean intersects(double b0, double b1)
-negated double field lower → SURVIVED
+4. public boolean intersects(double b0, double b1)<br />
+negated double field lower → SURVIVED<br />
 This mutant survives because in the function the comparison is b0 <= this.lower. If we negate this.lower, the comparison becomes b0 <= -this.lower, which is not correct and will give incorrect results when the range has a negative lower bound.
 
 
-5. private static double max(double d1, double d2)
-replaced return of double value with -(x + 1) for org/jfree/data/Range::max → KILLED
+5. private static double max(double d1, double d2)<br />
+replaced return of double value with -(x + 1) for org/jfree/data/Range::max → KILLED<br />
 This mutant is killed by our test suite, while we do not directly test this function as it is private it is used in other functions we test, when the return value is incremented by then then negated it will no longer be the maximum expected by our tests and will be killed.
 
 
-6. public double getUpperBound()
-Incremented (a++) double field upper → KILLED
+6. public double getUpperBound()<br />
+Incremented (a++) double field upper → KILLED<br />
 This was killed because when the test expects the correct value, however the mutant adds 1 so the mutant is killed.
 
 
-7. public double getCentralValue()
-Substituted 2.0 with 1.0 → KILLED
+7. public double getCentralValue()<br />
+Substituted 2.0 with 1.0 → KILLED<br />
 This mutant is killed by our suite because the function returns the central value and our tests cover this, when 2.0 is substituted with 1.0 the answer changes so the test fails and kills the mutant.
 
 
-8. public boolean intersects(Range range)
-replaced return of integer sized value with (x == 0 ? 1 : 0) → KILLED
+8. public boolean intersects(Range range)<br />
+replaced return of integer sized value with (x == 0 ? 1 : 0) → KILLED<br />
 This mutant is killed because our tests correctly identify if intersects is true or false and this mutant swaps the value so it fails the test and is killed.
 
 
-9. public static Range combine(Range range1, Range range2)
-not equal to equal → KILLED
+9. public static Range combine(Range range1, Range range2)<br />
+not equal to equal → KILLED<br />
 Our test suite kills this mutant because if != is replaced with equal the Null range will continue through the function and therefore return the incorrect value that our tests will detect.
 
 
-10. public boolean intersects(double b0, double b1)
-Negated double field lower → KILLED
+10. public boolean intersects(double b0, double b1)<br />
+Negated double field lower → KILLED<br />
 This mutant is killed by our suite becuase if the lower value of the range is negated, then the answer will change and our test will detect a failure. This is because our test originally had a very small discrepancy between the ranges so negating caused the opposite result in the if statement.
 
 
