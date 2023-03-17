@@ -113,9 +113,7 @@ If you see below we took out some of the extra tests we wrote last lab that were
 
 # 5 A discussion on the effect of equivalent mutants on mutation score accuracy
 
-
-Equivalent mutants are mutants which exhibit behavior identical to the program it has been created for. Equivalent mutants should not have an effect on mutation score
-
+Equivalent mutants are mutants which exhibit behavior identical to the program it has been created for. Equivalent mutants should not have an effect on mutation score, but automated programs such as PiTest cannot differentiate between a regular mutant and an equivalent mutant. Thus, these mutants will lower the mutation score even when there is nothing wrong with the program.
 
 # 6 A discussion of what could have been done to improve the mutation score of the test suites
 	
