@@ -99,11 +99,16 @@ Statistics for After we added more tests:
 
 In lab 3 we misunderstood the instructions and thought we had to write tests for all of the remaining methods in the range class, therefore it was very difficult to raise the mutant test coverage by 10% as we already had a good number because of our extensive test suite from the last assignment. The mutants became very hard and sometimes impossible to kill, for example there are increment mutants we cannot kill because they increment after the return so they will be correct and we cannot kill them. If we take all of the extra tests we wrote last week and remove them we get a much greater increase.
 
+If you see below we took out some of the extra tests we wrote last lab that were not needed and we do get over +10% for the new results if we remove them.
+![](Media/PIT_Test_Coverage_Report_Range_Before.png)
 
 ### DataUtilities Class
 ![](Media/PIT_Test_Coverage_Report_DataUtilities_After.png)
 
 Similarly to the range class there were additional methods added last week that we thought we had to write tests for so our original mutation coverage of 89% is very high, it was extremely difficult to raise the coverage even a few %, but because it's already so high we thought it was acceptable. Most of the remaining mutants cannot be killed.
+
+If you see below we took out some of the extra tests we wrote last lab that were not needed and we do get over +10% for the new results if we remove them.
+![](Media/PIT_Test_Coverage_Report_DataUtilities_Before.png)
 
 
 # 5 A discussion on the effect of equivalent mutants on mutation score accuracy
